@@ -1,11 +1,14 @@
 # Patterns of bone density in the XXX Folkebibliotekstomten collection
 
 Compute PRS in ancient samples using records for osteological data 
-- Approach 1: PRSice 2
 
-Get the association files in the correct fromat for software
+## Approach 1: PRSice 2
+Workflow and more detailed information can be found here:[Link Text](https://choishingwan.github.io/PRSice/).
 
-Pre-PRS, step 1 generates a clean snps file list (software detects duplicates and throws an error). The output.valid file is needed for step 2. 
-PRS, calculates the PRS using osteolofical data (8 phenotypes) and different covariates are tested (sex vs. sex+fracture observations)
+- 05.pre_prs_ind.smk: Get the association files in the correct form for the software
 
-- Approach 2: LD-blocks Berisa et al.2014
+- 05.PRSice_step1.smk, pre-step that generates a clean snps file list (software detects duplicates and throws an error). The *output.valid* file is needed for step 2. 
+
+- 05.PRSice_step2.smk, PRS calculates the PRS using osteological data (8 phenotypes) and different covariates are tested (sex vs. sex+fracture observations)
+
+## Approach 2: LD-blocks Berisa et al.2014
