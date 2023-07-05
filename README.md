@@ -1,6 +1,6 @@
 # Patterns of bone density in the XXX Folkebibliotekstomten collection
 
-Compute PRS in ancient samples using records for osteological data 
+Compute PRS in ancient samples using records for osteological data and data from the UK Biobank  [Link Text](http://www.nealelab.is/uk-biobank). 
 
 - 05.pre_prs_ind.smk: Common step to both approaches. Get the association files in the correct form for the software. More details are under each of the sections.
   
@@ -8,7 +8,7 @@ This script produces a file for the steps to follow in both approaches:
 - scripts/calc_alt.freqs.py: filters out low_confidence_variant and minor_AF < 0.01 and creates input files for PRS calculation. This file has to be different for every GWAS summary statistic that we test. Reasons: different number of column and column names for beta, MAF, p-value, alleles etc. In this step, we make sure there is an agreement with the polarization of the effect allele across GWAS (commonly ALT or Allele1). Important to know which human reference assembly has been used.
 
 ## Approach 1: PRSice 2
-Workflow and more detailed information can be found here:[Link Text](https://choishingwan.github.io/PRSice/).
+Workflow and more detailed information can be found here: [Link Text](https://choishingwan.github.io/PRSice/).
 
 - 05.PRSice_step1.smk, pre-step that generates a clean SNPs file list (software detects duplicates and throws an error). The *output.valid* file is needed for step 2. 
 
