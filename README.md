@@ -2,6 +2,8 @@
 
 Compute PRS in ancient samples using records for osteological data and data from the UK Biobank [UKBB](http://www.nealelab.is/uk-biobank). 
 
+Check config.yaml to see which software you need to pre-install before running this pipeline.
+
 Pre-processing and generation of files:
 - 00.wget_summstats.smk: download summary statistics from the GWAS of interest
 - 01.imputation.smk: perform imputation. This step is important when working with ancient DNA (usually samples have low coverage)
