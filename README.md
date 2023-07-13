@@ -1,6 +1,15 @@
 # Patterns of bone density in the XXX Folkebibliotekstomten collection
 
-Compute PRS in ancient samples using records for osteological data and data from the UK Biobank  [UKBB](http://www.nealelab.is/uk-biobank). 
+Compute PRS in ancient samples using records for osteological data and data from the UK Biobank [UKBB](http://www.nealelab.is/uk-biobank). 
+
+Pre-processing and generation of files:
+- 00.wget_summstats.smk: download summary statistics from the GWAS of interest
+- 01.imputation.smk: perform imputation. This step is important when working with ancient DNA (usually samples have low coverage)
+- 02.filerting_vcf.smk: filtering of the imputed vcf file (common good practices). Since we had access to a limited number of ancient samples, we merged our dataset with GBR from the 1000 Genomes Project.
+- 03.liftover_vcf.smk: liftover vcf files from GRCh38 to GRCh37 (older version). This step is important so that all files share the same human assembly reference. In our case, the summary statistics are based on GRCh37 and that is why we performed the liftover. 
+- 04.vcf2acf.smk: convert vcf to population allele frequencies. This step is only needed if you are calculating population PRS (skip for individual PRS). It requires a file with the population/group information.
+  
+All steps until this point can be skipped if your target file has already been processed (Quality Control) and all files were produced using the same human assembly. 
 
 - 05.pre_prs_ind.smk: Common step to both approaches. Get the association files in the correct form for the software. More details are under each of the sections.
   
