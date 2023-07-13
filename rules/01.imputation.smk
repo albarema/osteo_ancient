@@ -194,7 +194,7 @@ rule summarize_chrom:
         "glimpse/stats/chr{chrom}.glimpse.summary.tsv",
     shell:
         """
-        Rscript src/summary.R {input.vcf} {output}
+        Rscript scripts/summary.R {input.vcf} {output}
         """
 
 rule summarize_all:
@@ -204,5 +204,5 @@ rule summarize_all:
        "glimpse/stats/allchr.glimpse.summary.tsv",
     shell:
         """
-        Rscript src/summaryAll.R {input} {output}
+        Rscript scripts/summaryAll.R {input} {output}
         """
