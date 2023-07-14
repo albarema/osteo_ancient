@@ -1,0 +1,19 @@
+
+
+name: osteo
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - r-base
+  - pkg-config
+  - pysam
+  - numpy=1.24.2
+  - python=3.10
+  - conda
+  - snakemake
+  - bcftools
+  - samtools
+  - plink2
+prefix: /home/gsd818/miniconda3/envs/osteo
